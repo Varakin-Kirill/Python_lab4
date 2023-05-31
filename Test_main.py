@@ -2,7 +2,6 @@ import unittest
 from flask import Flask, request
 from main  import upload_file
 
-app = Flask(__name__)
 def setUp(self):
     self.app = Flask(__name__)
     self.app_context = self.app.test_request_context()
@@ -23,4 +22,4 @@ def test_most_common_word(self):
     self.assertIn(b'most', response.data)
 
 if __name__ == '__main__':
-    app.run()
+    unittest.main()
