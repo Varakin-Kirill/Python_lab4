@@ -2,14 +2,6 @@ import unittest
 from flask import Flask, request
 from main  import upload_file
 
-def setUp(self):
-    self.app = Flask(__name__)
-    self.app_context = self.app.test_request_context()
-    self.app_context.push()
-
-def tearDown(self):
-    self.app_context.pop()
-
 def test_upload_file(self):
     with self.app.test_request_context('/', data={'file': (open('example.txt', 'rb'), 'example.txt')}, method='POST'):
         response = upload_file()
